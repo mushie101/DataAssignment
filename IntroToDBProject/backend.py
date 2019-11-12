@@ -5,7 +5,7 @@ def studentData():
     cur=con.cursor()
     cur.execute("CREATE TABLE IF NOT EXISTS student(id INTEGER PRIMARY KEY, StdID text, Firstname text, Surname text, DoB text, Age text, Gender text, Address text, Mobile text)")
     con.commit()
-    con.close
+    con.close()
 
 def addStudentRecord(StdID, Firstname, Surname, DoB, Age, Gender, Address, Mobile):
     con=sqlite3.connect("student.db")
@@ -22,7 +22,7 @@ def viewData():
     con.close()
     return row
 
-def deleteRecord():
+def deleteRecord(id):
     con=sqlite3.connect("student.db")
     cur=con.cursor()
     cur.execute("DELETE FROM student WHERE id=?",(id,))
