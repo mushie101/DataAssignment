@@ -33,7 +33,7 @@ def searchData(StdID="",Firstname="" ,Surname="", DoB="", Age="", Gender="",Addr
     con=sqlite3.connect("student.db")
     cur=con.cursor()
     cur.execute("SELECT * FROM student WHERE StdID=? OR Firstname=? OR Surname=? OR DoB=? OR Age=? OR Gender=? OR Address=? OR Mobile=? ", \
-        (StdID, Firstname, DoB, Age, Gender, Address, Mobile))
+        (StdID, Firstname,Surname, DoB, Age, Gender, Address, Mobile))
     row=cur.fetchall()
     con.close()
     return row
